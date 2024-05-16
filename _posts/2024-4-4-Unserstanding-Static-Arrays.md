@@ -5,54 +5,57 @@ title: Understanding Static Arrays
 tags: [algo, data]
 ---
 
-# A Friendly Dive into Static Arrays
+# Sharing What I Learned About Static Arrays
 
-Hey there! Today, we're venturing into the fascinating world of static arrays. If you're like me, embarking on this software development journey, you'll find that understanding the basics not only boosts your confidence but also lays a solid foundation for tackling more complex topics. So, let's unravel the mystery of static arrays together, spiced up with some coding examples and my personal encounters with LeetCode challenges, especially from the awesome collection at [NeetCode](https://neetcode.io/).
+Hello everyone! I recently dove into the topic of static arrays while brushing up on some programming basics, and I thought it would be useful to share what I picked up. Static arrays are pretty foundational in coding, and getting a good handle on them has definitely helped me feel more confident. Let's take a relaxed stroll through the basics of static arrays, featuring some examples and challenges I came across.
 
-## What's All the Fuss About Static Arrays?
+## So, What Are Static Arrays?
 
-Imagine having a box where you can store your most prized possessions, but there's a catch—the box's size is fixed. That's essentially what static arrays are in the world of programming: fixed-length containers that neatly store a specific number of elements, which you can quickly grab by their unique spots, known as indices.
+Picture a row of mailboxes, each with a unique number. You can store something in them, and whenever you need to retrieve it, you just need to know the mailbox number. Static arrays in programming are quite similar. They are containers with a fixed size, where each slot holds one item and can be accessed using an index.
 
-### Why You Should Care:
-- **Fixed Size:** Once you decide how many items your static array can hold, that's it—no take-backs. This constraint is actually a blessing in disguise, ensuring efficient memory usage.
-- **Instant Retrieval:** Fancy getting any item at lightning speed? Thanks to indices, grabbing any element from a static array is a breeze.
-- **Cozy Neighbors:** All elements in a static array live side-by-side in memory, making access super fast.
+### Why Should You Even Care?
 
-## Where Do Static Arrays Shine?
+- **Fixed Size:** The size of a static array is determined when you create it and can’t be changed. This might seem limiting, but actually, it helps the computer manage memory more efficiently.
+- **Instant Access:** Retrieving an item by its index is super quick.
+- **Memory Friendly:** All elements are stored sequentially in memory, speeding up access times.
 
-Despite their simplicity, static arrays play a heroic role in various programming scenarios. Here's where they truly make a difference:
+## When Are Static Arrays Handy?
 
-- **Juggling Data:** Need to hold onto data temporarily while your algorithm does its magic? Static arrays to the rescue.
-- **Buffers:** Perfect for managing chunks of data, whether you're processing it or sending it across the digital universe.
-- **Quick Lookups:** Static arrays can serve as secret maps, helping you retrieve information at record speeds.
-- **Multi-Value Returns:** Functions can use pointers to static arrays to hand back multiple values. Handy, right?
-- **Storing Success:** In dynamic programming, static arrays keep track of intermediate results, making problem-solving a cinch.
+Although simple, static arrays are incredibly useful in several common scenarios in coding:
 
-## Performance at a Glance
+- **Storing Temporary Data:** They are perfect when you need a temporary, fixed-size space to stash data.
+- **Managing Data Buffers:** Whether you're processing large chunks of data or transferring it, static arrays can come in quite handy.
+- **Performing Quick Lookups:** Knowing the index of what you need makes retrieval instant.
+- **Returning Multiple Values from Functions:** You can use static arrays to return several values at once.
+- **Dynamic Programming:** They are ideal for keeping track of intermediate computations in algorithms.
 
-- **Reaching In:** O(1) - Grabbing an element by its index is instantaneous.
-- **Seek and Find:** O(n) - Searching through the array might require checking each item, but it's well worth it for the treasure you'll find.
+## A Quick Peek at Performance
 
-## Real-World Practice with LeetCode Challenges
+- **Access Time:** O(1) - Retrieving an element if you know the index is instantaneous.
+- **Search Time:** O(n) - If you need to find something without knowing its index, you might have to check each element, but this is generally quite fast.
+- **Binary Search:** O(log(n)) -  If you're working with a sorted array, binary search offers a highly efficient alternative to standard searching techniques. By repeatedly dividing the search interval in half, binary search drastically reduces the time it takes to locate an item, making it much faster than linear searching strategies. This method is not only a fundamental algorithm in computer science but also proves extremely useful in various programming contexts, such as efficiently tracking down bugs in Git using git bisect.
 
-Nothing cements understanding like diving hands-on into coding problems. I took a swing at some LeetCode problems, curated by the fantastic folks at NeetCode, and boy, was it enlightening!
 
-### Problem Solving 1: [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
+## Trying My Hand at Some LeetCode Problems
 
-Here, the challenge is to declutter a sorted array, making sure each jewel (element) is unique.
+I found that putting these concepts to use in solving some practical coding problems helped solidify my understanding. I tackled a couple of challenges on LeetCode that involved static arrays.
 
-**C++ Solution:**
+### Challenge 1: [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
+
+This problem involved making sure all elements in a sorted array are unique. Here’s how I approached it:
+
+**C++ Example:**
 
 ```cpp
 class Solution {
 public:
-    int removeDuplicates(vector<int>& array) {
+    int removeDuplicates(vector<int>& nums) {
+        if (nums.empty()) return 0;
         int i = 0;
-        int size = array.size();
-        for (int k = i + 1; k < size; k++) {
-            if (array[i] != array[k]) {
-                array[i + 1] = array[k];
+        for(int j = 1; j < nums.size(); j++) {
+            if(nums[j] != nums[i]) {
                 i++;
+                nums[i] = nums[j];
             }
         }
         return i + 1;
@@ -60,62 +63,63 @@ public:
 };
 ```
 
-**JavaScript Solution:**
+**JavaScript Example:**
 
 ```javascript
-var removeDuplicates = function(nums) {
-  let i = 0;
-  for (let k = 1; k < nums.length; k++) {
-    if (nums[i] != nums[k]) {
-      nums[i + 1] = nums[k];
-      i++;
+function removeDuplicates(nums) {
+    let i = 0;
+    for(let j = 1; j < nums.length; j++) {
+        if(nums[j] != nums[i]) {
+            i++;
+            nums[i] = nums[j];
+        }
     }
-  }
-  return i + 1;
-};
+    return i + 1;
+}
 ```
 
-### Problem Solving 2: [Remove Element](https://leetcode.com/problems/remove-element/)
+### Challenge 2: [Remove Element](https://leetcode.com/problems/remove-element/)
 
-The goal here is to vanish all instances of a certain value from an array, making it as compact as possible.
+The goal here was to get rid of all occurrences of a specific value within an array:
 
-**C++ Solution:**
+**C++ Example:**
 
 ```cpp
 class Solution {
 public:
-    int removeElement(vector<int>& array, int val) {
+    int removeElement(vector<int>& nums, int val) {
         int j = 0;
-        for (int i = 0; i < array.size(); i++) {
-            if (array[i] != val) {
-                array[j] = array[i];
-                j++;
-            }
-        }
-        return j;
-    }
-};
-```
-
-**JavaScript Solution:**
-
-```javascript
-var removeElement = function(nums, val) {
-    let j = 0;
-    for (let i = 0; i < nums.length; i++) {
-        if (nums[i] != val) {
+        for(int i = 0; i < nums.size(); i++) {
+            if(nums[i] != val) {
                 nums[j] = nums[i];
                 j++;
             }
         }
         return j;
-    };
+    }
+};
 ```
 
-## Keep the Learning Alive
+**JavaScript Example:**
 
-I've found that sometimes, diving into a topic visually adds another layer of understanding. So, here are a couple of YouTube gems that further demystify static arrays:
-- Get your feet wet with this [overview of static arrays](https://www.youtube.com/watch?v=PEnFFiQe1pM).
-- For a deeper dive, this [detailed exploration](https://www.youtube.com/watch?v=Hw42GkHPyvk) is just what you need.
+```javascript
+function removeElement(nums, val) {
+    let j = 0;
+    for(let i = 0; i < nums.length; i++) {
+        if(nums[i] != val) {
+            nums[j] = nums[i];
+            j++;
+        }
+    }
+    return j;
+}
+```
 
-Thank you for joining me on this static array adventure. Whether you're learning or teaching, embracing these fundamental concepts opens up a whole new world of programming possibilities. Happy coding!
+## Deepening My Understanding
+
+While learning, I also found some videos that helped clarify things even more:
+
+- [Introduction to Static Arrays](https://www.youtube.com/watch?v=PEnFFiQe1pM) - A great beginner-friendly video.
+- [Detailed Exploration of Static Arrays](https://www.youtube.com/watch?v=Hw42GkHPyvk) - For those looking for a deeper dive.
+
+Thanks for joining me on this journey through static arrays. Hopefully, my findings can help you as much as they've helped me. Dive in, play around with the code, and let's keep learning together! Happy coding!
