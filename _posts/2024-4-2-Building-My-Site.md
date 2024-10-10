@@ -24,7 +24,7 @@ I made a few customizations to tailor it to my needs. The first was eliminating 
 
 I had high expectations for the resume page. It was not just a component of my personal blog but also a dynamic way to update and share my resume. Traditional methods involving Word and multiple file versions were cumbersome, lacking good versioning and easy styling. 
 
-With my resume now online, I can leverage git history for version control and use HTML and SCSS for styling—tools with which I'm more comfortable with and also tend to be much for flexible. I addressed potential concerns about format compatibility for job applications by utilizing `@media print` CSS. This special styling applies only when the page is printed, allowing me to easily generate a PDF of my resume as needed. Below is the SCSS code used to style the print version of my resume:
+With my resume now online, I can leverage git history for version control and use HTML and SCSS for styling—tools with which I'm more comfortable with and also tend to be much more flexible. I addressed potential concerns about format compatibility for job applications by utilizing `@media print` CSS. This special styling applies only when the page is printed, allowing me to easily generate a PDF of my resume as needed. Below is the SCSS code used to style the print version of my resume:
 
 ```scss
 $font-size: 14px;

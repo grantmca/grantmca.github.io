@@ -19,7 +19,7 @@ From the outset, I knew I would need a couple primary tools: Clangd, CMake, the 
 
 ### Establishing the Foundation
 
-The initial setup encompassed creating a basic project structure and configuring the CMake files to provide a robust starting point for the rest of the development. This stage was crucial for ensuring a smooth workflow for adding new features and testing the project components effectively.
+The initial setup involved creating a basic project structure and configuring the CMake files to provide a solid starting point for the rest of the development. This stage was crucial for ensuring a smooth workflow for adding new features and testing the project components effectively.
 
 ## Building Components
 
