@@ -3,17 +3,15 @@
 
 @charset "utf-8";
 
-@import
-"reset",
-"resume",
-"wrapper",
-"page",
-"footer",
-"header",
-"float",
-"print",
-"posts",
-"about",
-"post",
-"mobile"
-;
+@use "reset";
+@use "resume";
+@use "wrapper";
+@use "page";
+@use "footer";
+@use "header";
+@use "float";
+@use "print";
+@use "posts";
+@use "about";
+@use "post";
+@use "mobile";
