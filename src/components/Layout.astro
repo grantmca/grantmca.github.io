@@ -1,0 +1,21 @@
+---
+import "../styles/global.css";
+import Nav from "./Nav.astro";
+import Head from "./Head.astro";
+import Footer from "./Footer.astro";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<Head />
+
+<body>
+  <div class="wrapper">
+    <Nav />
+    <main class="wrapper-main">
+      <slot />
+    </main>
+    <Footer />
+  </div>
+</body>
+</html>
