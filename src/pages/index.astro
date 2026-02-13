@@ -1,5 +1,7 @@
 ---
 import Layout from "../components/Layout.astro";
+import { Image } from "astro:assets";
+import headshot from "../assets/headshot.jpg";
 ---
 
 <Layout>
@@ -12,7 +14,7 @@ import Layout from "../components/Layout.astro";
             <h4><em>BS Computer Engineering, Minors in Mathematics &amp; Computer Science</em></h4>
           </div>
           <div class="profile-image mobile-hide">
-            <img src="/src/assets/headshot.jpg" alt="Profile Image">
+            <Image src={headshot} alt="Profile Image" width={200} height={200} />
           </div>
         </div>
         <br>
