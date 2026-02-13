@@ -1,4 +1,11 @@
-.jekyll-cache
-_site
+# IDE
 .idea
+
+# Dependencies
 node_modules/*
+
+# Build output
+dist/
+
+# Astro
+.astro/
