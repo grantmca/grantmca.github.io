@@ -5,11 +5,11 @@ import { resumeData } from "../../data/resume";
 <div class="space-y-8">
   <div class="card bg-base-200 shadow-xl p-6 text-center">
     <h1 class="text-4xl font-bold mb-2">{resumeData.name}</h1>
-    <p class="text-lg">
+    <p class="text-lg flex flex-wrap justify-center gap-x-2 gap-y-1">
       <a href={`mailto:${resumeData.email}`} class="link link-primary">{resumeData.email}</a>
-      <span class="mx-2">|</span>
+      <span class="hidden sm:inline">|</span>
       <span>{resumeData.phone}</span>
-      <span class="mx-2">|</span>
+      <span class="hidden sm:inline">|</span>
       <a class="link link-primary" target='_blank' href={resumeData.linkedin}>linkedin.com/in/grant-mcallister</a>
     </p>
   </div>
