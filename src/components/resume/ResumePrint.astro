@@ -1,0 +1,38 @@
+---
+import { resumeData } from "../../data/resume";
+---
+
+<div class="main-content">
+  <h2 class="text-center"><b>{resumeData.name}</b></h2>
+  <p class="text-center">{resumeData.email} | {resumeData.phone} | <a target='_blank' href={resumeData.linkedin}>{resumeData.linkedin}</a></p>
+  <hr>
+
+  <p><b>EDUCATION</b></p>
+  {resumeData.education.map(edu => (
+    <>
+      <p>{edu.degree}, {edu.school}</p>
+      {edu.minors && <p>Minors: {edu.minors}</p>}
+    </>
+  ))}
+  <hr>
+
+  <p><b>EXPERIENCE</b></p>
+  {resumeData.experience.map(job => (
+    <>
+      <p><i>{job.date}</i></p>
+      <p><b>{job.title}</b>, {job.company}, {job.location}</p>
+      <ul>
+        {job.bullets.map(bullet => <li>{bullet}</li>)}
+      </ul>
+    </>
+  ))}
+  <hr>
+
+  <p><b>TECHNICAL SKILLS</b></p>
+  <ul>
+    <li><b>Languages & Databases:</b> {resumeData.skills.languages}</li>
+    <li><b>Frameworks & Libraries:</b> {resumeData.skills.frameworks}</li>
+    <li><b>Cloud & Infrastructure:</b> {resumeData.skills.cloud}</li>
+    <li><b>Tools & DevOps:</b> {resumeData.skills.tools}</li>
+  </ul>
+</div>

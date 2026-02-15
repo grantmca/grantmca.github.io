@@ -1,0 +1,51 @@
+---
+import { resumeData } from "../../data/resume";
+---
+
+<div class="space-y-8">
+  <div class="card bg-base-200 shadow-xl p-6 text-center">
+    <h1 class="text-4xl font-bold mb-2">{resumeData.name}</h1>
+    <p class="text-lg">
+      <a href={`mailto:${resumeData.email}`} class="link link-primary">{resumeData.email}</a>
+      <span class="mx-2">|</span>
+      <span>{resumeData.phone}</span>
+      <span class="mx-2">|</span>
+      <a class="link link-primary" target='_blank' href={resumeData.linkedin}>linkedin.com/in/grant-mcallister</a>
+    </p>
+  </div>
+
+  <section class="card bg-base-100 border border-base-300 shadow-sm p-6">
+    <h2 class="text-xl font-bold mb-4">EDUCATION</h2>
+    {resumeData.education.map(edu => (
+      <>
+        <p><b>{edu.degree}</b>, {edu.school}</p>
+        {edu.minors && <p class="text-base-content/70">Minors: {edu.minors}</p>}
+      </>
+    ))}
+  </section>
+
+  <section class="card bg-base-100 border border-base-300 shadow-sm p-6">
+    <h2 class="text-xl font-bold mb-6">EXPERIENCE</h2>
+    {resumeData.experience.map((job, index) => (
+      <div class="mb-2">
+        <div class="flex flex-col md:flex-row md:justify-between mb-2">
+          <h3 class="font-semibold text-lg text-primary">{job.title}</h3>
+          <span class="badge badge-ghost">{job.date}</span>
+        </div>
+        <p class="font-medium mb-2">{job.company}, {job.location}</p>
+        <ul class="list-disc list-inside space-y-1 text-base-content/80">
+          {job.bullets.map(bullet => <li>{bullet}</li>)}
+        </ul>
+        {index !== resumeData.experience.length - 1 && <div class="divider"></div>}
+      </div>
+    ))}
+  </section>
+
+  <section class="card bg-base-100 border border-base-300 shadow-sm p-6">
+    <h2 class="text-xl font-bold mb-4">TECHNICAL SKILLS</h2>
+    <p class="mb-2"><b>Languages & Databases:</b> {resumeData.skills.languages}</p>
+    <p class="mb-2"><b>Frameworks & Libraries:</b> {resumeData.skills.frameworks}</p>
+    <p class="mb-2"><b>Cloud & Infrastructure:</b> {resumeData.skills.cloud}</p>
+    <p><b>Tools & DevOps:</b> {resumeData.skills.tools}</p>
+  </section>
+</div>
