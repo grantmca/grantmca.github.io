@@ -5,34 +5,42 @@ import headshot from "../assets/headshot.jpg";
 ---
 
 <Layout>
-  <div class="main-content">
-        <div class="profile">
-          <div class="profile-info">
-            <h2>David "Grant" McAllister Jr.</h2>
-            <h3>Software Engineer @ EAB</h3>
-            <h4><em>MS Management Information Systems</em></h4>
-            <h4><em>BS Computer Engineering, Minors in Mathematics &amp; Computer Science</em></h4>
-          </div>
-          <div class="profile-image mobile-hide">
+  <div class="container mx-auto px-4 py-8 max-w-4xl">
+    <div class="card bg-base-200 shadow-xl p-6">
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="flex-1">
+          <h1 class="text-3xl font-bold mb-2">David "Grant" McAllister Jr.</h1>
+          <h2 class="text-xl text-primary mb-2">Senior Software Engineer @ EAB</h2>
+          <p class="text-base-content/70 italic">MS Management Information Systems</p>
+          <p class="text-base-content/70 italic">BS Computer Engineering, Minors in Mathematics & Computer Science</p>
+        </div>
+        <div class="avatar hidden md:block">
+          <div class="w-48 rounded-full ring ring-primary ring-offset-base-200 ring-offset-2">
             <Image src={headshot} alt="Profile Image" width={200} height={200} />
           </div>
         </div>
-        <br>
-        <h2>About</h2>
-        <p>
-          Hey there! I'm Grant McAllister, a Software Engineer at EAB. I've always been into technology, and as a lifelong learner, I'm constantly exploring new ideas and concepts in the tech world.
-
-          I've got a Bachelor of Science in Computer Engineering and a Master of Science in Management Information Systems under my belt. These experiences have given me a solid foundation in software development, web development, and database management. But I believe that learning doesn't stop with a degree—it's an ongoing process that continues throughout your career.
-
-          At EAB, I work as a full-stack developer, mainly focusing on a Rails application. But I also get to explore and work with a bunch of other technologies. It's an exciting environment that allows me to expand my skills and tackle new challenges every day.
-
-          I believe that the best way to really learn something is by teaching others. That's why I wanted to create this blog—to share my knowledge, experiences, and insights with fellow developers and enthusiasts.
-
-          I'll be sharing my thoughts on various technical topics, from software engineering concepts to specific technologies and frameworks. My goal is to present the information in a clear, concise, and approachable way that can teach others and hopefully teach me something as well.
-        </p>
-        <h2>Contact</h2>
-        <p>
-          I'm always eager to connect with fellow developers and learn from others. If you have any questions, comments, or ideas you'd like to share, feel free to reach out to me at <a href="mailto:grantmca2221@gmail.com">grantmca2221@gmail.com</a>. I'd love to discuss them with you!
-        </p>
       </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="prose max-w-none">
+      <h2 class="text-2xl font-semibold mb-4">About</h2>
+      <p class="leading-relaxed">
+        Hey there! I'm Grant McAllister, a Senior Software Engineer at EAB.
+      </p>
+      <p class="leading-relaxed mt-4">
+        In my current job I work on the AI team building out AI infsatrucutre and tools that help Higher Education staff better serve their students.
+      </p>
+
+      <p class="leading-relaxed mt-4">
+        I love exploring new technologies and learning new things, In my free time I enjoy mountain biking, hiking, building out my homelab, and contrinuting to open source.
+      </p>
+
+      <h2 class="text-2xl font-semibold mb-4 mt-8">Contact</h2>
+      <p class="leading-relaxed">
+        I'm always eager to connect and learn from others. If you have any questions, comments, or ideas you'd like to share, feel free to reach out to me at <a href="mailto:grantmca2221@gmail.com" class="link link-primary">grantmca2221@gmail.com</a>. I'd love to discuss them with you!
+      </p>
+    </div>
+  </div>
 </Layout>

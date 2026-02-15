@@ -1,80 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ResumeScreen from "../components/resume/ResumeScreen.astro";
+import ResumePrint from "../components/resume/ResumePrint.astro";
 ---
 
 <Layout>
-  <div class="main-content">
-        <div class='resume-header' style='text-align: center;'>
-          <h2><b>David 'Grant' McAllister Jr.</b></h2>
-          <p class="contacts mobile-hide">grantmca2221@gmail.com | (205) 799-5017 | <a class="link" target='_blank' href='https://www.linkedin.com/in/grant-mcallister/'>https://www.linkedin.com/in/grant-mcallister/</a></p>
-        </div>
-        <hr>
-        <div class='item'>
-          <div class='title'>
-            <p><b>EDUCATION</b></p>
-          </div>
-          <p>Master of Science in Management Information Systems, The University of Alabama</p>
-          <p>Bachelor of Science in Computer Engineering, The University of Alabama</p>
-          <p>Minors: Mathematics, Computer Science</p>
-        </div>
-        <hr>
-        <div class='title'>
-          <p><b>EXPERIENCE</b></p>
-        </div>
-        <div class='item'>
-          <p><i>July 2025 – Present</i></p>
-          <p><b>Senior Software Engineer</b>, EAB Global Inc., Birmingham, AL</p>
-          <ul>
-            <li>Architected real-time document summarization system with FastAPI WebSocket backend deployed on AWS Fargate with auto-scaling, featuring Lit web component frontend and multi-format document support, enabling advisors to receive streamed AI-generated summaries</li>
-            <li>Designed and implemented config-driven AI agent framework using Model Context Protocol (MCP), enabling dynamic creation of specialized AI agents with customizable prompts and tools without code changes</li>
-          </ul>
-        </div>
-        <div class='item'>
-          <p><i>July 2023 – July 2025</i></p>
-          <p><b>Software Engineer</b>, EAB Global Inc., Birmingham, AL</p>
-          <ul>
-            <li>Re-architected legacy SFTP data pipeline to support multi-tenant authentication using public/private key signing and JWT, implementing solution with AWS Lambda, SQS, Transfer Family, and DynamoDB for secure data imports</li>
-            <li>Designed and implemented custom student attributes system with lookup table architecture for optimized query performance, enabling administrators to configure, import, and report on custom data fields with significantly improved flexibility</li>
-            <li>Engineered registration and event management platform with RESTful APIs, real-time RSVP tracking, and customizable inquiry forms using Rails and Lit web components, supporting over 500 schools and 70 million users</li>
-            <li>Developed LLM-based safety detection system to identify when students ask emergency or crisis-related questions that AI chatbots are not qualified to handle, automatically alerting business partners to intervene</li>
-            <li>Led migration of RAG-based conversational AI system from LangChain to LangGraph architecture, refactoring conversation flow and state management to improve maintainability and enable more complex agentic workflows</li>
-            <li>Implemented automated flaky test detection and Slack notification system in GitLab CI/CD pipelines to improve test suite reliability and accelerate merge request approvals</li>
-          </ul>
-        </div>
-        <div class='item'>
-          <p><i>June 2022 – July 2023</i></p>
-          <p><b>Associate Software Engineer</b>, EAB Global Inc., Birmingham, AL</p>
-          <ul>
-            <li>Developed appointment feedback system including REST API endpoints, customizable questionnaire templates, data validation logic, and automated email/SMS notifications, enabling advisors to collect structured student feedback across 500+ universities</li>
-            <li>Designed and implemented customizable case management email notification system with outcome-specific messaging over the life cycle of the case, improving coordination among student support staff</li>
-            <li>Selected for cross-team task force to improve application performance, optimized database queries, implemented eager loading, reduced redundant database calls, and resolved data integrity issues in core quick search functionality</li>
-            <li>Mentored newer associate engineers on application architecture and development best practices while establishing team processes for ticket triage, bug prioritization, and demo workflows</li>
-          </ul>
-        </div>
-        <div class='item'>
-          <p><i>January 2021 – May 2021</i></p>
-          <p><b>Research Assistant | Institute of Data Analytics</b>, The University of Alabama, Tuscaloosa, AL</p>
-          <ul>
-            <li>Employed k-means clustering in scikit-learn and natural language processing to determine author attribution of posts potentially linked to sex trafficking</li>
-          </ul>
-        </div>
-        <div class='item'>
-          <p><i>August 2018 – December 2018</i></p>
-          <p><b>Engineering Co-op | Quality Analysis, Mercedes-Benz US International Inc.,</b> Vance, AL</p>
-          <ul>
-            <li>Engineered data collection tools for a automotive defect detection system by utilizing Python, OpenCV, and PyQt</li>
-            <li>Developed an object detection machine learning vision model aimed at detecting defects in automobiles as they go through the assembly line using Tensorflow</li>
-          </ul>
-        </div>
-        <hr>
-        <div class='title'>
-          <p><b>TECHNICAL SKILLS</b></p>
-        </div>
-        <ul>
-          <li><b>Languages & Databases:</b> Ruby, Python, JavaScript/TypeScript, C/C++, SQL, HTML/CSS | PostgreSQL, MySQL, SQLite</li>
-          <li><b>Frameworks & Libraries:</b> Ruby on Rails, FastAPI, Django, Lit Web Components, LangChain, LangGraph, Model Context Protocol</li>
-          <li><b>Cloud & Infrastructure:</b> Lambda, Fargate, SQS, AWS Transfer Family, DynamoDB</li>
-          <li><b>Tools & DevOps:</b> Docker, Git, GitLab CI/CD, GitHub Actions, Linux, Bash, Vim, WebSocket, JWT</li>
-        </ul>
-      </div>
+  <div class="container mx-auto px-4 py-12 max-w-4xl">
+    <div class="hide-on-print">
+      <ResumeScreen />
+    </div>
+
+    <div class="hide-on-screen">
+      <ResumePrint />
+    </div>
+  </div>
 </Layout>

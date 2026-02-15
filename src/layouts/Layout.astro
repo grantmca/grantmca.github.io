@@ -1,21 +1,21 @@
 ---
 import "../styles/global.css";
 import Nav from "../components/Nav.astro";
-import Head from "../components/Head.astro";
 import Footer from "../components/Footer.astro";
 ---
 
 <!DOCTYPE html>
-<html lang="en">
-<Head />
-
-<body>
-  <div class="wrapper">
-    <Nav />
-    <main class="wrapper-main">
-      <slot />
-    </main>
-    <Footer />
-  </div>
+<html lang="en" data-theme="silk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Grant McAllister</title>
+</head>
+<body class="min-h-screen flex flex-col">
+  <Nav />
+  <main class="flex-1">
+    <slot />
+  </main>
+  <Footer />
 </body>
 </html>
